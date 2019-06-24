@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        a[target] {
+            background-color: yellow;
+        }
+
+        /* default appearance */
+        article>* {
+            padding: 20px;
+            background-color: #cccccc;
+        }
+
+        article>div {
+            background-color: #dedede;
+        }
+
+        article footer {
+            background-color: #bbb;
+        }
+
+        /* Flexbox */
+
+        article {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+        }
+
+
+        @media screen and (min-width: 600px) {
+            article {
+                -webkit-flex-direction: row;
+                flex-direction: row;
+            }
+
+            article>* {
+                -webkit-flex: 1;
+                flex: 1;
+            }
+
+            aside {
+
+                -webkit-order: -1;
+                order: -1;
+            }
+
+            article>div {
+
+                -webkit-flex: 3;
+                flex: 3;
+            }
+
+            footer {
+                background-color: #ccc;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            article {
+                -webkit-flex-direction: column;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="www.google.com">Google</a>
+    <a href="www.facebook.com" target="_blank">Facebook</a>
+
+
+    <article>
+        <div>Main Content in center in wide screen, first in narrow screen</div>
+        <aside>Left side in wide screen, after content in narrow screen</aside>
+        <footer>Right side in wide screen, button in narrow screen</footer>
+    </article>
+
+</body>
+
+</html>
